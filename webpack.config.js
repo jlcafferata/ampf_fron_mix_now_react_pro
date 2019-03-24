@@ -1,8 +1,8 @@
 var path = require("path");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 
-var BUILD_DIR = path.resolve(__dirname, "src/frontend/public");
-var APP_DIR = path.resolve(__dirname, "src/frontend/app");
+var BUILD_DIR = path.resolve(__dirname, "src/public");
+var APP_DIR = path.resolve(__dirname, "src");
 
 const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   template: APP_DIR + "/index.html",
@@ -28,12 +28,41 @@ var config = {
         query: {
           presets: ["react", "es2015", "stage-3"]
         }
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          "file-loader",
+          {
+            loader: "image-webpack-loader",
+            options: {
+              bypassOnDebug: true, // webpack@1.x
+              disable: true // webpack@2.x and newer
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "fonts/"
+            }
+          }
+        ]
       }
     ]
   },
   plugins: [HTMLWebpackPluginConfig],
   devServer: {
-    host: "192.168.0.162",
+    host: "127.0.0.1",
     port: 3000,
     historyApiFallback: true
   },
