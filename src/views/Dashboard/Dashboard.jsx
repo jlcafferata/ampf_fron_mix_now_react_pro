@@ -36,8 +36,7 @@ class DashboardView extends React.Component {
                 <Col xs={12} md={4}>
                   <Card
                     className="card-stats card-raisedcard-chart"
-                    onClick={this.tryAyudasEconomicas}
-                  >
+                    onClick={this.tryAyudasEconomicas}>
                     <CardHeader>
                       <CardCategory>Servicios financieros</CardCategory>
                       <CardTitle tag="h3">Ayudas economicas</CardTitle>

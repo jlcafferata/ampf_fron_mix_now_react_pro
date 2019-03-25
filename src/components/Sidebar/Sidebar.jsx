@@ -6,10 +6,12 @@ import NotificationAlert from "react-notification-alert";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
 
+import { connect } from "react-redux";
+
 import { Button } from "..";
 
-import avatar from "../../assets/img/ryan.jpg";
-import logo from "../../logo-white.svg";
+import avatar from "../../assets/img/default-avatar.png";
+import logo from "../../assets/img/logo.png";
 
 var ps;
 
@@ -32,22 +34,7 @@ class Sidebar extends React.Component {
     return this.props.location.pathname.indexOf(routeName) > -1 ? "active" : "";
   }
   minimizeSidebar() {
-    var message = "Sidebar mini ";
-    if (document.body.classList.contains("sidebar-mini")) {
-      message += "deactivated...";
-    } else {
-      message += "activated...";
-    }
     document.body.classList.toggle("sidebar-mini");
-    var options = {};
-    options = {
-      place: "tr",
-      message: message,
-      type: "info",
-      icon: "now-ui-icons ui-1_bell-53",
-      autoDismiss: 7
-    };
-    this.refs.notificationAlert.notificationAlert(options);
   }
   componentDidMount() {
     if (navigator.platform.indexOf("Win") > -1) {
@@ -56,6 +43,7 @@ class Sidebar extends React.Component {
         suppressScrollY: false
       });
     }
+    this.minimizeSidebar();
   }
   componentWillUnmount() {
     if (navigator.platform.indexOf("Win") > -1) {
@@ -68,6 +56,7 @@ class Sidebar extends React.Component {
     }
   }
   render() {
+    const { user } = this.props;
     return (
       <div>
         <NotificationAlert ref="notificationAlert" />
@@ -75,17 +64,15 @@ class Sidebar extends React.Component {
           <div className="logo">
             <a
               href="https://www.creative-tim.com"
-              className="simple-text logo-mini"
-            >
+              className="simple-text logo-mini">
               <div className="logo-img">
-                <img src={logo} alt="react-logo" />
+                <img src={logo} alt="AMPF" />
               </div>
             </a>
             <a
               href="https://www.creative-tim.com"
-              className="simple-text logo-normal"
-            >
-              Creative Tim
+              className="simple-text logo-normal">
+              AMPF
             </a>
             <div className="navbar-minimize">
               <Button
@@ -94,57 +81,14 @@ class Sidebar extends React.Component {
                 icon
                 round
                 id="minimizeSidebar"
-                onClick={this.minimizeSidebar}
-              >
+                onClick={this.minimizeSidebar}>
                 <i className="now-ui-icons text_align-center visible-on-sidebar-regular" />
                 <i className="now-ui-icons design_bullet-list-67 visible-on-sidebar-mini" />
               </Button>
             </div>
           </div>
 
-          <div className="sidebar-wrapper" ref="sidebar">
-            <div className="user">
-              <div className="photo">
-                <img src={avatar} alt="Avatar" />
-              </div>
-              <div className="info">
-                <a
-                  data-toggle="collapse"
-                  aria-expanded={this.state.openAvatar}
-                  onClick={() =>
-                    this.setState({ openAvatar: !this.state.openAvatar })
-                  }
-                >
-                  <span>
-                    Ryan Gosling
-                    <b className="caret" />
-                  </span>
-                </a>
-                <Collapse isOpen={this.state.openAvatar}>
-                  <ul className="nav">
-                    <li>
-                      <a>
-                        <span className="sidebar-mini-icon">MP</span>
-                        <span className="sidebar-normal">My Profile</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span className="sidebar-mini-icon">EP</span>
-                        <span className="sidebar-normal">Edit Profile</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span className="sidebar-mini-icon">S</span>
-                        <span className="sidebar-normal">Settings</span>
-                      </a>
-                    </li>
-                  </ul>
-                </Collapse>
-              </div>
-            </div>
-
+          <div className="sidebar-wrapper " ref="sidebar">
             <Nav>
               {this.props.routes.map((prop, key) => {
                 if (prop.redirect) return null;
@@ -156,8 +100,7 @@ class Sidebar extends React.Component {
                       <a
                         data-toggle="collapse"
                         aria-expanded={this.state[prop.state]}
-                        onClick={() => this.setState(st)}
-                      >
+                        onClick={() => this.setState(st)}>
                         <i className={"now-ui-icons " + prop.icon} />
                         <p>
                           {prop.name}
@@ -171,12 +114,10 @@ class Sidebar extends React.Component {
                             return (
                               <li
                                 className={this.activeRoute(prop.path)}
-                                key={key}
-                              >
+                                key={key}>
                                 <NavLink
                                   to={prop.path}
-                                  activeClassName="active"
-                                >
+                                  activeClassName="active">
                                   <span className="sidebar-mini-icon">
                                     {prop.mini}
                                   </span>
@@ -197,8 +138,7 @@ class Sidebar extends React.Component {
                     <NavLink
                       to={prop.path}
                       className="nav-link"
-                      activeClassName="active"
-                    >
+                      activeClassName="active">
                       <i className={"now-ui-icons " + prop.icon} />
                       <p>{prop.name}</p>
                     </NavLink>
@@ -213,4 +153,11 @@ class Sidebar extends React.Component {
   }
 }
 
-export default Sidebar;
+function mapStateToProps(state) {
+  const { user } = state.authentication;
+  return {
+    user
+  };
+}
+
+export default connect(mapStateToProps)(Sidebar);

@@ -9,8 +9,17 @@ import { PrivateRoute } from "../_components";
 import { LoginPage } from "../LoginPage";
 import { RegisterPage } from "../RegisterPage";
 import Dashboard from "../layouts/Dashboard/Dashboard.jsx";
-
+import NotificationAlert from "react-notification-alert";
 import LockScreenPage from "../views/Pages/LockScreenPage.jsx";
+import "react-notification-alert/dist/animate.css";
+
+let options_message = {
+  place: "tr",
+  message: "",
+  type: "danger",
+  icon: "now-ui-icons ui-1_bell-53",
+  autoDismiss: 4
+};
 
 class App extends React.Component {
   constructor(props) {
@@ -23,30 +32,34 @@ class App extends React.Component {
     });
   }
 
-  render() {
-    const { alert } = this.props;
-    console.log("APP - RENDER");
-    return (
-      <div style={{ marginTop: "5%" }}>
-        <div className="container">
-          <div className="col-sm-8 col-sm-offset-2">
-            {alert.message && (
-              <div className={`alert ${alert.type}`}>{alert.message}</div>
-            )}
+  componentWillReceiveProps(nextProps) {
+    let message = "";
+    if (nextProps.alert.message) {
+      if (nextProps.alert.message && nextProps.alert.message != "Unknown") {
+        message = nextProps.alert.message;
+      } else {
+        message = "Error en los ingresos";
+      }
+      options_message.message = message;
+      this.refs.notificationAlert.notificationAlert(options_message);
+    }
+  }
 
-            <Router history={history}>
-              <div>
-                <Switch>
-                  <PrivateRoute exact path="/" component={Dashboard} />
-                  <Route exact path="/login" component={LoginPage} />
-                  <Route exact path="/logout" component={LoginPage} />
-                  <Route exact path="/register" component={RegisterPage} />
-                  <Route component={LockScreenPage} />
-                </Switch>
-              </div>
-            </Router>
+  render() {
+    return (
+      <div>
+        <Router history={history}>
+          <div>
+            <Switch>
+              <PrivateRoute exact path="/" component={Dashboard} />
+              <Route exact path="/login" component={LoginPage} />
+              <Route exact path="/logout" component={LoginPage} />
+              <Route exact path="/register" component={RegisterPage} />
+              <Route component={LockScreenPage} />
+            </Switch>
           </div>
-        </div>
+        </Router>
+        <NotificationAlert ref="notificationAlert" />
       </div>
     );
   }
