@@ -62,7 +62,7 @@ var config = {
   },
   plugins: [HTMLWebpackPluginConfig],
   devServer: {
-    host: "192.168.0.162",
+    host: "127.0.0.1",
     port: 3000,
     historyApiFallback: true
   },

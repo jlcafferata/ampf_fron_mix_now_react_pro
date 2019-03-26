@@ -25,7 +25,7 @@ import {
 
 import { widgetStories, tasks } from "../../variables/general";
 
-import avatar from "../../assets/img/james.jpg";
+//import avatar from "../../assets/img/james.jpg";
 
 class Widgets extends React.Component {
   render() {

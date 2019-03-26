@@ -25,7 +25,7 @@ import {
 
 import { widgetStoriesRTL, tasksRTL } from "../../variables/general";
 
-import avatar from "../../assets/img/james.jpg";
+//import avatar from "../../assets/img/james.jpg";
 
 class Widgets extends React.Component {
   constructor(props) {
@@ -254,7 +254,7 @@ class Widgets extends React.Component {
               <Card className="card-testimonial">
                 <CardHeader className="card-header-avatar">
                   <a href="#pablo">
-                    <img className="img img-raised" src={avatar} alt="..." />
+                    {/*<img className="img img-raised" src={avatar} alt="..." />*/}
                   </a>
                 </CardHeader>
                 <CardBody>

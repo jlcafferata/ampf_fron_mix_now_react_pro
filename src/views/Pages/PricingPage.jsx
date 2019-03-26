@@ -11,7 +11,7 @@ import {
 
 import { CardIcon, Button } from "../../components";
 
-import bgImage from "../../assets/img/bg15.jpg";
+//import bgImage from "../../assets/img/bg15.jpg";
 
 class Pricing extends React.Component {
   render() {
@@ -118,10 +118,7 @@ class Pricing extends React.Component {
             </Container>
           </div>
         </div>
-        <div
-          className="full-page-background"
-          style={{ backgroundImage: "url(" + bgImage + ")" }}
-        />
+        <div className="full-page-background" />
       </div>
     );
   }

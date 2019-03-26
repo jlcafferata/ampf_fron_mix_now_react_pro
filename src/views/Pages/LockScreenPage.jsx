@@ -23,7 +23,7 @@ class LockScreenPage extends React.Component {
         <div className="full-page-content">
           <div className="lock-page">
             <Container>
-              <Col lg={4} md={8} xs={12} className="mr-auto ml-auto">
+              <Col lg={12} md={12} xs={12} className="mr-auto ml-auto">
                 <Card className="card-lock text-center">
                   <CardHeader>
                     <img

@@ -15,10 +15,10 @@ import {
 
 import { Button } from "../../components";
 
-import nowLogo from "../../assets/img/now-logo.png";
+/*import nowLogo from "../../assets/img/now-logo.png";
 
 import bgImage from "../../assets/img/bg14.jpg";
-
+*/
 import { userActions } from "../../_actions";
 
 class LoginPage extends React.Component {
@@ -64,7 +64,7 @@ class LoginPage extends React.Component {
                   <Card className="card-login card-plain">
                     <CardHeader>
                       <div className="logo-container">
-                        <img src={nowLogo} alt="now-logo" />
+                        {/*<img src={nowLogo} alt="now-logo" />*/}
                       </div>
                     </CardHeader>
                     <CardBody>
@@ -141,10 +141,7 @@ class LoginPage extends React.Component {
             </Container>
           </div>
         </div>
-        <div
-          className="full-page-background"
-          style={{ backgroundImage: "url(" + bgImage + ")" }}
-        />
+        <div className="full-page-background" />
       </div>
     );
   }
