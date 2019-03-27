@@ -7,7 +7,7 @@ import { Header, Footer, Sidebar } from "../../components";
 
 import dashboardRoutes from "../../routes/dashboard.jsx";
 
-import DashboardView from "../../views/Dashboard/Dashboard.jsx";
+import DashboardView from "../../_views/Dashboard/Dashboard.jsx";
 
 var ps;
 

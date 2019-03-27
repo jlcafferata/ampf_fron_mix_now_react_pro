@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { userActions } from "../_actions";
+import { userActions } from "../../_actions";
 
 import {
   Form,
@@ -17,9 +17,9 @@ import {
   Col
 } from "reactstrap";
 
-import logo from "../assets/img/logo-1.png";
+import logo from "../../assets/img/logo-1.png";
 
-import { Button } from "../components";
+import { Button } from "../../components";
 
 class LoginPage extends Component {
   constructor(props) {
@@ -105,15 +105,6 @@ class LoginPage extends Component {
           <Col sm="12" md={{ size: 6, offset: 3 }}>
             <Card>
               <CardHeader>
-                {submitted &&
-                  !email && (
-                    <div className="alert alert-danger">Email requerido</div>
-                  )}
-                {submitted &&
-                  email &&
-                  !password && (
-                    <div className="alert alert-danger">Password requerido</div>
-                  )}
                 <CardTitle tag="h4">
                   <img src={logo} alt="AMPF" />
                 </CardTitle>
