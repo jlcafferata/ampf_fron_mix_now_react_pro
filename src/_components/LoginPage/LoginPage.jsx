@@ -18,6 +18,7 @@ import {
 } from "reactstrap";
 
 import logo from "../../assets/img/logo-1.png";
+import progress from "../../assets/img/progress.gif";
 
 import { Button } from "../../components";
 
@@ -95,10 +96,14 @@ class LoginPage extends Component {
     }
     this.setState({ login });
   }
-  render() {
-    const { loggingIn } = this.props;
-    const { email, password, submitted } = this.state;
 
+  componentDidMount() {
+    document.getElementsByName("email")[0].focus();
+  }
+
+  render() {
+    const { emailState, passwordState } = this.state.login;
+    const { processing } = this.props;
     return (
       <div style={{ marginTop: "3%" }}>
         <Row>
@@ -111,8 +116,7 @@ class LoginPage extends Component {
               </CardHeader>
               <CardBody>
                 <Form method="POST" onSubmit={this.handleSubmit}>
-                  <FormGroup
-                    className={"has-label " + this.state.login.emailState}>
+                  <FormGroup className={"has-label " + emailState}>
                     <Label>Email *</Label>
                     <Input
                       name="email"
@@ -120,8 +124,7 @@ class LoginPage extends Component {
                       onChange={e => this.loginEmail(e)}
                     />
                   </FormGroup>
-                  <FormGroup
-                    className={"has-label " + this.state.login.passwordState}>
+                  <FormGroup className={"has-label " + passwordState}>
                     <Label>Password *</Label>
                     <Input
                       type="password"
@@ -132,7 +135,7 @@ class LoginPage extends Component {
                   <div className="category form-category">
                     * Campos requeridos
                   </div>
-                  <Button color="primary" onClick={e => this.loginSubmit(e)}>
+                  <Button color="danger" onClick={e => this.loginSubmit(e)}>
                     Login
                   </Button>
                   <Link to="/remember" className="btn btn-link">
@@ -141,6 +144,11 @@ class LoginPage extends Component {
                   <Link to="/register" className="btn btn-link">
                     Registrar
                   </Link>
+                  {processing && (
+                    <div>
+                      <img src={progress} alt="procesando..." />
+                    </div>
+                  )}
                 </Form>
                 <Row>
                   <Col sm="12" md={{ size: 8, offset: 8 }} />
@@ -156,12 +164,12 @@ class LoginPage extends Component {
 }
 
 function mapStateToProps(state) {
-  const { loggingIn } = state.authentication;
+  const { processing } = state.authentication;
   const { email, password } = state;
   return {
     email,
     password,
-    loggingIn
+    processing
   };
 }
 

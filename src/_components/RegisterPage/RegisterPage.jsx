@@ -176,7 +176,7 @@ class RegisterPage extends React.Component {
                   <div className="category form-category">
                     * Campos requeridos
                   </div>
-                  <Button color="primary" onClick={e => this.registerSubmit(e)}>
+                  <Button color="danger" onClick={e => this.registerSubmit(e)}>
                     Registrar
                   </Button>
                   <Link to="/" className="btn btn-link">

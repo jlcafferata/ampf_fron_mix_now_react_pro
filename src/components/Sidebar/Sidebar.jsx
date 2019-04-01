@@ -10,7 +10,6 @@ import { connect } from "react-redux";
 
 import { Button } from "..";
 
-import avatar from "../../assets/img/default-avatar.png";
 import logo from "../../assets/img/logo.png";
 
 var ps;
@@ -60,7 +59,7 @@ class Sidebar extends React.Component {
     return (
       <div>
         <NotificationAlert ref="notificationAlert" />
-        <div className="sidebar" data-color="blue">
+        <div className="sidebar" data-color="jose">
           <div className="logo">
             <a
               href="https://www.creative-tim.com"

@@ -1,15 +1,23 @@
 import React from "react";
-import { Card, CardHeader, CardFooter, CardTitle, Row, Col } from "reactstrap";
+import {
+  Card,
+  CardHeader,
+  CardFooter,
+  CardTitle,
+  Row,
+  Col,
+  Nav,
+  NavItem,
+  NavLink
+} from "reactstrap";
 import { Link } from "react-router-dom";
 import { PanelHeader, Stats, Statistics, CardCategory } from "../../components";
-
-import logo from "../../assets/img/logo-1.png";
 
 class DashboardView extends React.Component {
   render() {
     return (
       <div>
-        <PanelHeader size="sm" content={logo} />
+        <PanelHeader size="sm" />
         <div className="content">
           <Row>
             <Col xs={4} md={4}>
@@ -29,21 +37,28 @@ class DashboardView extends React.Component {
                         subtitle=""
                       />
                     </CardHeader>
+                    <hr />
                     <CardFooter>
-                      <Link to="/ayudasEconomicas">
-                        <Stats>
-                          {[
-                            {
-                              i: "now-ui-icons ui-1_simple-add",
-                              t: "Nueva"
-                            },
-                            {
-                              i: "now-ui-icons education_glasses",
-                              t: "Consulta"
-                            }
-                          ]}
-                        </Stats>
-                      </Link>
+                      <Nav className="icon-primary icon-circle ">
+                        <NavItem>
+                          <NavLink
+                            className="active"
+                            onClick={() =>
+                              this.setState({ pageSubcategories: "ps1" })
+                            }>
+                            <i className="now-ui-icons ui-1_simple-add" />
+                          </NavLink>
+                        </NavItem>
+                        <NavItem>
+                          <NavLink
+                            className="active"
+                            onClick={() =>
+                              this.setState({ pageSubcategories: "ps2" })
+                            }>
+                            <i className="now-ui-icons ui-1_zoom-bold" />
+                          </NavLink>
+                        </NavItem>
+                      </Nav>
                     </CardFooter>
                   </Card>
                 </Col>
@@ -66,15 +81,28 @@ class DashboardView extends React.Component {
                         subtitle=""
                       />
                     </CardHeader>
+                    <hr />
                     <CardFooter>
-                      <Stats>
-                        {[
-                          {
-                            i: "now-ui-icons arrows-1_refresh-69",
-                            t: ""
-                          }
-                        ]}
-                      </Stats>
+                      <Nav className=" icon-primary icon-circle ">
+                        <NavItem>
+                          <NavLink
+                            className="active"
+                            onClick={() =>
+                              this.setState({ pageSubcategories: "ps1" })
+                            }>
+                            <i className="now-ui-icons ui-1_simple-add" />
+                          </NavLink>
+                        </NavItem>
+                        <NavItem>
+                          <NavLink
+                            className="active"
+                            onClick={() =>
+                              this.setState({ pageSubcategories: "ps2" })
+                            }>
+                            <i className="now-ui-icons ui-1_zoom-bold" />
+                          </NavLink>
+                        </NavItem>
+                      </Nav>
                     </CardFooter>
                   </Card>
                 </Col>
@@ -97,15 +125,28 @@ class DashboardView extends React.Component {
                         subtitle=""
                       />
                     </CardHeader>
+                    <hr />
                     <CardFooter>
-                      <Stats>
-                        {[
-                          {
-                            i: "now-ui-icons arrows-1_refresh-69",
-                            t: ""
-                          }
-                        ]}
-                      </Stats>
+                      <Nav className="icon-primary icon-circle ">
+                        <NavItem>
+                          <NavLink
+                            className="active"
+                            onClick={() =>
+                              this.setState({ pageSubcategories: "ps1" })
+                            }>
+                            <i className="now-ui-icons ui-1_simple-add" />
+                          </NavLink>
+                        </NavItem>
+                        <NavItem>
+                          <NavLink
+                            className="active"
+                            onClick={() =>
+                              this.setState({ pageSubcategories: "ps2" })
+                            }>
+                            <i className="now-ui-icons ui-1_zoom-bold" />
+                          </NavLink>
+                        </NavItem>
+                      </Nav>
                     </CardFooter>
                   </Card>
                 </Col>
