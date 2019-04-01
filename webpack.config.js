@@ -20,8 +20,7 @@ var config = {
     extensions: [".js", ".jsx"]
   },
   module: {
-    loaders: [
-      {
+    loaders: [{
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
         loader: "babel-loader",
@@ -35,34 +34,26 @@ var config = {
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
-        use: [
-          "file-loader",
-          {
-            loader: "image-webpack-loader",
-            options: {
-              bypassOnDebug: true, // webpack@1.x
-              disable: true // webpack@2.x and newer
-            }
-          }
-        ]
+        use: [{
+          loader: 'file-loader',
+          options: {},
+        }, ]
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              outputPath: "fonts/"
-            }
+        use: [{
+          loader: "file-loader",
+          options: {
+            name: "[name].[ext]",
+            outputPath: "fonts/"
           }
-        ]
+        }]
       }
     ]
   },
   plugins: [HTMLWebpackPluginConfig],
   devServer: {
-    host: "192.168.0.162",
+    host: "192.168.0.74",
     port: 3000,
     historyApiFallback: true
   },
