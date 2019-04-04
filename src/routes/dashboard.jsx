@@ -1,6 +1,7 @@
 import Dashboard from "../_views/Dashboard/Dashboard.jsx";
 import TimelinePage from "../views/Pages/TimelinePage.jsx";
 import UserPage from "../views/Pages/UserPage.jsx";
+import Wizard from "../views/Forms/Wizard/Wizard.jsx";
 
 var pages = [
   {
@@ -39,6 +40,7 @@ var dashRoutes = [
     state: "openComponents",
     icon: "business_briefcase-24"
   },
+  { path: "/forms/wizard", name: "Wizard", mini: "W", component: Wizard },
   { redirect: true, path: "/", pathTo: "/dashboard", name: "" }
 ];
 export default dashRoutes;
