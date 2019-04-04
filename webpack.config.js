@@ -36,13 +36,9 @@ var config = {
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
-          "file-loader",
           {
-            loader: "image-webpack-loader",
-            options: {
-              bypassOnDebug: true, // webpack@1.x
-              disable: true // webpack@2.x and newer
-            }
+            loader: "file-loader",
+            options: {}
           }
         ]
       },
@@ -62,8 +58,8 @@ var config = {
   },
   plugins: [HTMLWebpackPluginConfig],
   devServer: {
-    host: "192.168.0.162",
-    port: 3000,
+    host: "127.0.0.1",
+    port: 3001,
     historyApiFallback: true
   },
   externals: {

@@ -6,11 +6,11 @@ import { history } from "../_helpers";
 import { alertActions } from "../_actions";
 import { PrivateRoute } from "../_components";
 //import { HomePage } from "../HomePage";
-import { LoginPage } from "../LoginPage";
-import { RegisterPage } from "../RegisterPage";
-import Dashboard from "../layouts/Dashboard/Dashboard.jsx";
+import { LoginPage } from "../_components/LoginPage";
+import { RegisterPage } from "../_components/RegisterPage";
+import Dashboard from "../_layouts/Dashboard/Dashboard.jsx";
 import NotificationAlert from "react-notification-alert";
-import LockScreenPage from "../views/Pages/LockScreenPage.jsx";
+import LockScreenPage from "../_views/Pages/LockScreenPage.jsx";
 import "react-notification-alert/dist/animate.css";
 
 let options_message = {

@@ -17,8 +17,8 @@ import NotificationAlert from "react-notification-alert";
 
 import { PanelHeader, Button, Instructions } from "../../components";
 
-import img1 from "../../assets/img/bg1.jpg";
-import img2 from "../../assets/img/bg3.jpg";
+//import img1 from "../../assets/img/bg1.jpg";
+//import img2 from "../../assets/img/bg3.jpg";
 
 class Notifications extends React.Component {
   constructor(props) {

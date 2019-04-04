@@ -6,13 +6,13 @@ import {
   DropdownItem
 } from "reactstrap";
 
-import taskImage1 from "../assets/img/ryan.jpg";
+/*import taskImage1 from "../assets/img/ryan.jpg";
 import taskImage2 from "../assets/img/eva.jpg";
 
 import taskRTLImage1 from "../assets/img/emilyz.jpg";
 import taskRTLImage2 from "../assets/img/james.jpg";
 import taskRTLImage3 from "../assets/img/mike.jpg";
-
+*/
 // ##############################
 // // // tasks list for Tasks card in Dashboard view
 // #############################
@@ -20,17 +20,17 @@ import taskRTLImage3 from "../assets/img/mike.jpg";
 const tasks = [
   {
     checked: true,
-    image: taskImage1,
+    image: "", //taskImage1,
     text: 'Sign contract for "What are conference organizers afraid of?"'
   },
   {
     checked: false,
-    image: taskImage1,
+    image: "", //taskImage1,
     text: "Lines From Great Russian Literature? Or E-mails From My Boss?"
   },
   {
     checked: true,
-    image: taskImage2,
+    image: "", //taskImage2,
     text:
       "Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit"
   }
@@ -43,17 +43,17 @@ const tasks = [
 const tasksRTL = [
   {
     checked: true,
-    image: taskRTLImage1,
+    image: "", //taskRTLImage1,
     text: 'توقيع عقد "ما يخشاه منظمو المؤتمر؟"	'
   },
   {
     checked: false,
-    image: taskRTLImage2,
+    image: "", //taskRTLImage2,
     text: "خطوط من الأدب الروسي العظيم؟ أو رسائل البريد الإلكتروني من بلدي بوس؟	"
   },
   {
     checked: true,
-    image: taskRTLImage3,
+    image: "", //taskRTLImage3,
     text:
       "مغمورة: بعد مرور عام ، تقييم ما فقد وما تم العثور عليه عندما اجتاحت الأمطار المدمرة مترو ديترويت	"
   }
@@ -451,12 +451,12 @@ const events = [
 // // // for vector map row in Dashboard view
 // #############################
 
-const us_flag = require("../assets/img/flags/US.png");
-const de_flag = require("../assets/img/flags/DE.png");
-const au_flag = require("../assets/img/flags/AU.png");
-const gb_flag = require("../assets/img/flags/GB.png");
-const ro_flag = require("../assets/img/flags/RO.png");
-const br_flag = require("../assets/img/flags/BR.png");
+const us_flag = ""; // require("../assets/img/flags/US.png");
+const de_flag = ""; // require("../assets/img/flags/DE.png");
+const au_flag = ""; //require("../assets/img/flags/AU.png");
+const gb_flag = ""; //require("../assets/img/flags/GB.png");
+const ro_flag = ""; //require("../assets/img/flags/RO.png");
+const br_flag = ""; //require("../assets/img/flags/BR.png");
 
 const table_data = [
   { flag: us_flag, country: "USA", count: "2.920", percentage: "53.23%" },

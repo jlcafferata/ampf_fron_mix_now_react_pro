@@ -16,10 +16,10 @@ import {
 
 import { PanelHeader, Button } from "../../components";
 
-import jacket from "../../assets/img/saint-laurent.jpg";
+/*import jacket from "../../assets/img/saint-laurent.jpg";
 import shirt from "../../assets/img/balmain.jpg";
 import swim from "../../assets/img/prada.jpg";
-
+*/
 class ExtendedTables extends React.Component {
   render() {
     return (
@@ -289,7 +289,7 @@ class ExtendedTables extends React.Component {
                       <tr>
                         <td>
                           <div className="img-container">
-                            <img src={jacket} alt="..." />
+                            {/*<img src={jacket} alt="..." />*/}
                           </div>
                         </td>
                         <td className="td-name">
@@ -334,7 +334,7 @@ class ExtendedTables extends React.Component {
                       <tr>
                         <td>
                           <div className="img-container">
-                            <img src={shirt} alt="..." />
+                            {/*<img src={shirt} alt="..." />*/}
                           </div>
                         </td>
                         <td className="td-name">
@@ -379,7 +379,7 @@ class ExtendedTables extends React.Component {
                       <tr>
                         <td>
                           <div className="img-container">
-                            <img src={swim} alt="..." />
+                            {/*<img src={swim} alt="..." />*/}
                           </div>
                         </td>
                         <td className="td-name">

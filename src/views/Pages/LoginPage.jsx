@@ -15,10 +15,6 @@ import {
 
 import { Button } from "../../components";
 
-import nowLogo from "../../assets/img/now-logo.png";
-
-import bgImage from "../../assets/img/bg14.jpg";
-
 import { userActions } from "../../_actions";
 
 class LoginPage extends React.Component {
@@ -64,7 +60,7 @@ class LoginPage extends React.Component {
                   <Card className="card-login card-plain">
                     <CardHeader>
                       <div className="logo-container">
-                        <img src={nowLogo} alt="now-logo" />
+                        {/*<img src={nowLogo} alt="now-logo" />*/}
                       </div>
                     </CardHeader>
                     <CardBody>
@@ -72,8 +68,7 @@ class LoginPage extends React.Component {
                         className={
                           "no-border form-control-lg " +
                           (this.state.firstnameFocus ? "input-group-focus" : "")
-                        }
-                      >
+                        }>
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>
                             <i className="now-ui-icons users_circle-08" />
@@ -94,8 +89,7 @@ class LoginPage extends React.Component {
                         className={
                           "no-border form-control-lg " +
                           (this.state.lastnameFocus ? "input-group-focus" : "")
-                        }
-                      >
+                        }>
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>
                             <i className="now-ui-icons text_caps-small" />
@@ -116,8 +110,7 @@ class LoginPage extends React.Component {
                         color="primary"
                         size="lg"
                         href="#pablo"
-                        className="mb-3"
-                      >
+                        className="mb-3">
                         Get Started
                       </Button>
                       <div className="pull-left">
@@ -141,10 +134,7 @@ class LoginPage extends React.Component {
             </Container>
           </div>
         </div>
-        <div
-          className="full-page-background"
-          style={{ backgroundImage: "url(" + bgImage + ")" }}
-        />
+        <div className="full-page-background" />
       </div>
     );
   }

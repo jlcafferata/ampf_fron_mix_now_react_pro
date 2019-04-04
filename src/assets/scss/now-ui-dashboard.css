@@ -4917,6 +4917,15 @@ Created using IcoMoon - icomoon.io
     .sidebar[data-color="yellow"] .nav li.active > a:not([data-toggle="collapse"]) i,
     .off-canvas-sidebar[data-color="yellow"] .nav li.active > a:not([data-toggle="collapse"]) i {
       color: #FFB236; }
+  .sidebar[data-color="jose"]:after,
+  .off-canvas-sidebar[data-color="jose"]:after {
+    background: darkred; }
+  .sidebar[data-color="jose"] .nav li.active > a:not([data-toggle="collapse"]),
+  .off-canvas-sidebar[data-color="jose"] .nav li.active > a:not([data-toggle="collapse"]) {
+    color: darkred; }
+    .sidebar[data-color="jose"] .nav li.active > a:not([data-toggle="collapse"]) i,
+    .off-canvas-sidebar[data-color="jose"] .nav li.active > a:not([data-toggle="collapse"]) i {
+      color: darkred; }
   .sidebar .user,
   .off-canvas-sidebar .user {
     padding-bottom: 20px;
@@ -5116,9 +5125,9 @@ Created using IcoMoon - icomoon.io
   padding-top: 80px;
   padding-bottom: 45px;
   position: relative;
-  background: #2c2c2c;
+  background: firebrick;
   /* fallback for old browsers */
-  background: linear-gradient(160deg, #2c2c2c 0%, #1f1f1f 100%);
+  background: linear-gradient(120deg, darkred 80%, firebrick 100%);
   background-size: 105%;
   overflow: hidden; }
   .panel-header .header .title {
