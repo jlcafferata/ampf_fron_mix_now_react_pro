@@ -10,17 +10,27 @@ import {
   NavItem,
   NavLink
 } from "reactstrap";
-import { Link } from "react-router-dom";
-import { PanelHeader, Stats, Statistics, CardCategory } from "../../components";
+
+import {
+  PanelHeader,
+  Statistics,
+  CardCategory,
+  Instructions,
+  Button
+} from "../../components";
 
 class DashboardView extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div>
         <PanelHeader size="sm" />
         <div className="content">
           <Row>
-            <Col xs={4} md={4}>
+            <Col lg={4} xs={12} md={12}>
               <Row>
                 <Col xs={12} md={12}>
                   <Card
@@ -41,11 +51,7 @@ class DashboardView extends React.Component {
                     <CardFooter>
                       <Nav className="icon-primary icon-circle ">
                         <NavItem>
-                          <NavLink
-                            className="active"
-                            onClick={() =>
-                              this.setState({ pageSubcategories: "ps1" })
-                            }>
+                          <NavLink to="/forms/wizard" className="active">
                             <i className="now-ui-icons ui-1_simple-add" />
                           </NavLink>
                         </NavItem>
@@ -64,7 +70,7 @@ class DashboardView extends React.Component {
                 </Col>
               </Row>
             </Col>
-            <Col xs={4} md={4}>
+            <Col lg={4} xs={12} md={12}>
               <Row>
                 <Col xs={12} md={12}>
                   <Card
@@ -108,7 +114,7 @@ class DashboardView extends React.Component {
                 </Col>
               </Row>
             </Col>
-            <Col xs={4} md={4}>
+            <Col lg={4} xs={12} md={12}>
               <Row>
                 <Col xs={12} md={12}>
                   <Card

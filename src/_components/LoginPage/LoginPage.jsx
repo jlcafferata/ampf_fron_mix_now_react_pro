@@ -105,10 +105,10 @@ class LoginPage extends Component {
     const { emailState, passwordState } = this.state.login;
     const { processing } = this.props;
     return (
-      <div style={{ marginTop: "3%" }}>
+      <div className="content">
         <Row>
-          <Col sm="12" md={{ size: 6, offset: 3 }}>
-            <Card>
+          <Col xs={12} sm={12} md={6} lg={6} className="ml-auto mr-auto">
+            <Card className="mt-4">
               <CardHeader>
                 <CardTitle tag="h4">
                   <img src={logo} alt="AMPF" />
@@ -135,7 +135,7 @@ class LoginPage extends Component {
                   <div className="category form-category">
                     * Campos requeridos
                   </div>
-                  <Button color="danger" onClick={e => this.loginSubmit(e)}>
+                  <Button color="primary" onClick={e => this.loginSubmit(e)}>
                     Login
                   </Button>
                   <Link to="/remember" className="btn btn-link">
@@ -150,9 +150,6 @@ class LoginPage extends Component {
                     </div>
                   )}
                 </Form>
-                <Row>
-                  <Col sm="12" md={{ size: 8, offset: 8 }} />
-                </Row>
               </CardBody>
               <CardFooter />
             </Card>

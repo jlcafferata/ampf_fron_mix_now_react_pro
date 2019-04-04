@@ -65,8 +65,9 @@ var config = {
   externals: {
     // global app config object
     config: JSON.stringify({
-      //apiUrl: 'http://192.168.0.17:8080'
-      apiUrl: "http://34.230.28.215"
+      apiUrl: "http://192.168.0.17:8080"
+      //apiUrl: "http://34.230.28.215"
+      //apiUrl: "api.ampf.app"
     })
   }
 };
