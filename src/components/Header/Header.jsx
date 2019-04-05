@@ -178,6 +178,9 @@ class Header extends Component {
                   </p>
                 </DropdownToggle>
                 <DropdownMenu right>
+                  <DropdownItem tag="a" href="/datosUsuario">
+                    Datos usuario
+                  </DropdownItem>
                   <DropdownItem tag="a" href="/logout">
                     Cerrar sesi&oacute;n
                   </DropdownItem>
