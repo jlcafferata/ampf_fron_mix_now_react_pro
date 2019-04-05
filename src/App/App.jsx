@@ -8,6 +8,7 @@ import { PrivateRoute } from "../_components";
 //import { HomePage } from "../HomePage";
 import { LoginPage } from "../_components/LoginPage";
 import { RegisterPage } from "../_components/RegisterPage";
+import {DatosUsuario} from "../_components/DatosUsuario";
 import Dashboard from "../_layouts/Dashboard/Dashboard.jsx";
 import NotificationAlert from "react-notification-alert";
 import LockScreenPage from "../_views/Pages/LockScreenPage.jsx";
@@ -55,6 +56,7 @@ class App extends React.Component {
               <Route exact path="/login" component={LoginPage} />
               <Route exact path="/logout" component={LoginPage} />
               <Route exact path="/register" component={RegisterPage} />
+              <Route exact path="/datosUsuario" component={DatosUsuario} />
               <Route component={LockScreenPage} />
             </Switch>
           </div>
