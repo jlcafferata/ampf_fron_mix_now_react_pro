@@ -1969,7 +1969,6 @@ Created using IcoMoon - icomoon.io
   display: inline-block;
   font: normal normal normal 14px/1 'Nucleo Outline';
   font-size: inherit;
-  speak: none;
   text-transform: none;
   /* Better Font Rendering */
   -webkit-font-smoothing: antialiased;
@@ -2509,8 +2508,7 @@ Created using IcoMoon - icomoon.io
   .footer.footer-default {
     background-color: #f2f2f2; }
   .footer nav {
-    display: inline-block;
-    float: left;
+    display: inline-block;    
     padding-left: 7px; }
   .footer ul {
     margin-bottom: 0;
@@ -2640,7 +2638,6 @@ Created using IcoMoon - icomoon.io
     text-align: center;
     text-transform: uppercase; }
   .fixed-plugin .adjustments-line p {
-    float: left;
     display: inline-block;
     margin-bottom: 0;
     font-size: 1em;
@@ -4919,7 +4916,7 @@ Created using IcoMoon - icomoon.io
       color: #FFB236; }
   .sidebar[data-color="jose"]:after,
   .off-canvas-sidebar[data-color="jose"]:after {
-    background: darkred; }
+    background: rgb(117, 159, 201) }
   .sidebar[data-color="jose"] .nav li.active > a:not([data-toggle="collapse"]),
   .off-canvas-sidebar[data-color="jose"] .nav li.active > a:not([data-toggle="collapse"]) {
     color: darkred; }
@@ -5125,9 +5122,8 @@ Created using IcoMoon - icomoon.io
   padding-top: 80px;
   padding-bottom: 45px;
   position: relative;
-  background: firebrick;
   /* fallback for old browsers */
-  background: linear-gradient(120deg, darkred 80%, firebrick 100%);
+  background: rgb(38, 99, 134);
   background-size: 105%;
   overflow: hidden; }
   .panel-header .header .title {
@@ -5440,6 +5436,7 @@ Created using IcoMoon - icomoon.io
       padding-left: 0;
       padding-right: 0; }
   .card .card-header {
+    background: slategrey none repeat scroll 0 0;
     padding: 15px 15px 0;
     border: 0; }
     .card .card-header:not([data-background-color]) {
@@ -6416,6 +6413,9 @@ Copyright (c) 2015 Daniel Eden
 .wizard-container [data-background-color="red"] .moving-tab {
   color: #FF3636; }
 
+
+
+    
 .wizard-container .card-wizard .tab-content {
   min-height: 355px;
   padding: 20px 0; }
@@ -7627,7 +7627,8 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   -moz-transition: 300ms ease 0s;
   -ms-transition: 300ms ease 0s;
   -o-transform: 300ms ease 0s;
-  transition: 300ms ease 0s; }
+  transition: 300ms ease 0s; 
+  transform: 300ms ease 0s;}
   .noUi-handle:focus {
     outline: none; }
 
